@@ -1,0 +1,317 @@
+<main class="eco-login min-vh-100 d-flex flex-column flex-lg-row overflow-hidden">
+
+  <!-- Panel izquierdo: identidad, impacto y métricas -->
+  <section class="eco-brand-panel col-12 col-lg-6 d-flex flex-column p-4 p-sm-5 p-lg-5">
+    <header class="position-relative z-1 d-flex align-items-center justify-content-between gap-3">
+      <a
+        routerLink="/login"
+        class="d-inline-flex align-items-center gap-3 text-decoration-none text-white">
+
+        <span class="eco-logo d-inline-flex align-items-center justify-content-center">
+          <span class="material-symbols-outlined">eco</span>
+        </span>
+
+        <span>
+          <span class="d-flex align-items-center gap-2 fw-bold fs-5">
+            {{ appName }}
+
+            <span class="eco-country-badge">
+              {{ appCity }}
+            </span>
+          </span>
+
+          <span class="d-block small eco-text-secondary">
+            El Salvador Sostenible
+          </span>
+        </span>
+      </a>
+
+      <span class="eco-status d-none d-sm-inline-flex align-items-center gap-2">
+        <span class="eco-status-dot"></span>
+        Red activa en El Salvador
+      </span>
+    </header>
+
+    <div class="position-relative z-1 my-5 my-lg-auto py-2 py-lg-5">
+      <span class="eco-impact-badge d-inline-flex align-items-center gap-2 mb-4">
+        <span class="material-symbols-outlined">compost</span>
+        Impacto ecológico y economía circular
+      </span>
+
+      <h1 class="display-6 fw-bold lh-sm mb-3">
+        Rescatando alimentos,
+        <span class="eco-gradient-text d-block">
+          salvando el planeta.
+        </span>
+      </h1>
+
+      <p class="eco-text-secondary fs-6 lh-lg mb-4 mb-lg-5">
+        Conectamos a consumidores salvadoreños con mercados locales, panaderías
+        y restaurantes para adquirir productos frescos a precios reducidos,
+        combatiendo juntos el desperdicio.
+      </p>
+
+      <div class="row g-3">
+        <!-- Alimentos -->
+        <div class="col-6 col-sm-4">
+          <article class="eco-metric h-100">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="material-symbols-outlined eco-icon-primary">
+                restaurant
+              </span>
+
+              <span class="small eco-text-secondary">
+                Alimentos
+              </span>
+            </div>
+
+            <p class="h4 fw-bold mb-1">+14,200</p>
+            <p class="mb-0 eco-metric-detail">
+              Porciones rescatadas
+            </p>
+          </article>
+        </div>
+
+        <!-- Huella CO2 -->
+        <div class="col-6 col-sm-4">
+          <article class="eco-metric h-100">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="material-symbols-outlined eco-icon-primary">
+                cloud_done
+              </span>
+
+              <span class="small eco-text-secondary">
+                Huella CO₂
+              </span>
+            </div>
+
+            <p class="h4 fw-bold mb-1">-36.4 t</p>
+            <p class="mb-0 eco-metric-detail">
+              Emisiones prevenidas
+            </p>
+          </article>
+        </div>
+
+        <!-- Comercios -->
+        <div class="col-12 col-sm-4">
+          <article class="eco-metric h-100">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="material-symbols-outlined eco-icon-primary">
+                storefront
+              </span>
+
+              <span class="small eco-text-secondary">
+                Comercios
+              </span>
+            </div>
+
+            <p class="h4 fw-bold mb-1">+180</p>
+            <p class="mb-0 eco-metric-detail">
+              Aliados en {{ appCity }}
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <footer class="position-relative z-1 pt-4 mt-auto border-top eco-border-top d-none d-lg-flex align-items-center justify-content-between gap-3 small eco-text-secondary">
+      <span class="d-inline-flex align-items-center gap-2 text-success">
+        <span class="material-symbols-outlined">
+          energy_savings_leaf
+        </span>
+
+        Alojado en servidores ecológicos de bajo consumo
+      </span>
+
+      <span>San Salvador</span>
+    </footer>
+  </section>
+
+  <!-- Panel derecho: autenticación -->
+  <section class="eco-auth-panel col-12 col-lg-6 d-flex align-items-center justify-content-center p-4 p-sm-5">
+    <div class="eco-auth-content w-100 position-relative z-1">
+      <section class="eco-auth-card">
+        <header class="mb-4 mb-sm-5">
+          <h2 class="h2 fw-bold mb-2">
+            Iniciar sesión
+          </h2>
+
+          <p class="mb-0 eco-text-secondary">
+            Inicia sesión para reducir tu huella y aprovechar ofertas.
+          </p>
+        </header>
+
+        <form [formGroup]="form" (ngSubmit)="iniciarSesion()" novalidate>
+          <!-- Correo -->
+          <div class="mb-3">
+            <label for="email" class="eco-label">
+              Correo electrónico
+            </label>
+
+            <div class="eco-input-group">
+              <span class="material-symbols-outlined eco-input-icon">
+                mail
+              </span>
+
+              <input
+                pInputText
+                id="email"
+                type="email"
+                formControlName="email"
+                class="w-100 eco-form-control eco-form-control-icon"
+                placeholder="usuario@ecomercadito.sv"
+                autocomplete="email"
+                [class.ng-invalid]="campoInvalido('email')"
+                [class.ng-dirty]="campoInvalido('email')" />
+            </div>
+
+            @if (campoInvalido('email')) {
+              <small class="d-block mt-1 text-danger">
+                Ingresa un correo electrónico válido.
+              </small>
+            }
+          </div>
+
+          <!-- Contraseña -->
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+              <label for="password" class="eco-label mb-0">
+                Contraseña
+              </label>
+
+              <a
+                href="/login"
+                class="eco-primary-link small"
+                (click)="$event.preventDefault()">
+                ¿Olvidaste tu contraseña?
+              </a>
+            </div>
+
+            <div class="eco-input-group">
+              <span class="material-symbols-outlined eco-input-icon">
+                lock
+              </span>
+
+              <p-password
+                inputId="password"
+                formControlName="password"
+                [feedback]="false"
+                [toggleMask]="true"
+                styleClass="w-100 eco-password"
+                inputStyleClass="w-100 eco-form-control eco-form-control-icon"
+                placeholder="Ingresa tu contraseña"
+                autocomplete="current-password">
+              </p-password>
+            </div>
+
+            @if (campoInvalido('password')) {
+              <small class="d-block mt-1 text-danger">
+                La contraseña es obligatoria.
+              </small>
+            }
+          </div>
+
+          <!-- Mantener sesión -->
+          <div class="mb-4 pt-1">
+            <div class="d-flex align-items-center gap-2">
+              <p-checkbox
+                inputId="recordar"
+                formControlName="recordar"
+                [binary]="true">
+              </p-checkbox>
+
+              <label for="recordar" class="small eco-text-secondary">
+                Mantener sesión iniciada
+              </label>
+            </div>
+          </div>
+
+          <!-- Botón enviar: HTML para usar icono Material -->
+          <p-button
+            type="submit"
+            label="Ingresar"
+            icon="pi pi-arrow-right"
+            iconPos="right"
+            [loading]="cargando()"
+            [disabled]="cargando()"
+            styleClass="eco-login-button"
+            class="eco-login-button-wrapper">
+          </p-button>
+
+          <!-- Divisor -->
+          <div class="d-flex align-items-center gap-3 my-3">
+            <span class="flex-grow-1 eco-divider"></span>
+            <span class="small eco-text-secondary">O</span>
+            <span class="flex-grow-1 eco-divider"></span>
+          </div>
+
+          <!-- Crear cuenta -->
+          <a
+            routerLink="/crear-cuenta"
+            class="eco-create-account w-100 d-inline-flex align-items-center justify-content-center gap-2 text-decoration-none">
+
+            <span class="material-symbols-outlined">
+              person_add
+            </span>
+
+            Crear cuenta
+          </a>
+        </form>
+
+        <!-- Acceso para comercios -->
+        <div class="mt-4 pt-4 text-center eco-border-top">
+          <p class="mb-0 small eco-text-secondary">
+            ¿Eres un comercio aliado?
+
+            <a
+              href="/login"
+              class="eco-primary-link fw-semibold ms-1"
+              (click)="$event.preventDefault()">
+
+              Ingresa aquí
+
+              <span class="material-symbols-outlined ms-1 eco-link-icon" aria-hidden="true">
+                open_in_new
+              </span>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Enlaces legales -->
+      <footer class="mt-4 text-center">
+        <div class="d-flex flex-wrap justify-content-center gap-2 gap-sm-3 small text-secondary">
+          <a
+            href="/login"
+            class="eco-footer-link"
+            (click)="$event.preventDefault()">
+            Términos y condiciones
+          </a>
+
+          <span>•</span>
+
+          <a
+            href="/login"
+            class="eco-footer-link"
+            (click)="$event.preventDefault()">
+            Política de privacidad
+          </a>
+
+          <span>•</span>
+
+          <a
+            href="/login"
+            class="eco-footer-link"
+            (click)="$event.preventDefault()">
+            Soporte {{ appCity }}
+          </a>
+        </div>
+
+        <p class="mt-2 mb-0 eco-footer-copy">
+          © {{ ahora }} {{ appName }} {{ appCity }}.
+          Plataforma de rescate alimentario y sostenibilidad.
+        </p>
+      </footer>
+    </div>
+  </section>
+</main>

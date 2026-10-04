@@ -1,0 +1,403 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.eco-login {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--eco-text);
+  background: var(--eco-bg);
+}
+
+/* Panel izquierdo */
+.eco-brand-panel {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #0a100c 0%,
+    #090d0b 52%,
+    var(--eco-bg-deep) 100%
+  );
+  border-bottom: 1px solid var(--eco-border);
+}
+
+/* Panel derecho */
+.eco-auth-panel {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--eco-surface-lowest);
+}
+
+/* Contenido de autenticación */
+.eco-auth-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 27.5rem;
+}
+
+/* Tarjeta de login */
+.eco-auth-card {
+  width: 100%;
+  padding: 2rem;
+  background: rgb(17 20 18 / 95%);
+  border: 1px solid var(--eco-border);
+  border-radius: var(--eco-radius-lg);
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 55%);
+}
+
+/* Logo */
+.eco-logo {
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--eco-primary);
+  background: var(--eco-surface);
+  border: 1px solid var(--eco-border);
+  border-radius: var(--eco-radius-sm);
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.eco-logo .material-symbols-outlined {
+  font-size: 1.35rem;
+}
+
+/* Badges */
+.eco-country-badge,
+.eco-status,
+.eco-impact-badge {
+  color: var(--eco-primary);
+  background: rgb(74 222 128 / 7%);
+  border: 1px solid rgb(74 222 128 / 18%);
+  border-radius: 999px;
+}
+
+.eco-country-badge {
+  padding: 0.15rem 0.5rem;
+  font-size: 0.6875rem;
+}
+
+.eco-status,
+.eco-impact-badge {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.eco-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  flex: 0 0 auto;
+  background: var(--eco-primary);
+  border-radius: 50%;
+  animation: eco-dot 1.8s infinite;
+}
+
+.eco-impact-badge .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+/* Título con gradiente */
+.eco-gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--eco-primary),
+    #a7f3d0,
+    #99f6e4
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/* Colores */
+.eco-text-secondary {
+  color: var(--eco-text-secondary);
+}
+
+.eco-icon-primary,
+.eco-primary-link {
+  color: var(--eco-primary);
+}
+
+/* Métricas */
+.eco-metric {
+  padding: 1rem;
+  background: rgb(17 20 18 / 90%);
+  border: 1px solid var(--eco-border);
+  border-radius: 1rem;
+}
+
+.eco-metric .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+.eco-metric-detail {
+  color: var(--eco-text-muted);
+  font-size: 0.6875rem;
+}
+
+/* Labels */
+.eco-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Inputs */
+.eco-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.eco-input-icon {
+  position: absolute;
+  z-index: 2;
+  left: 0.85rem;
+  color: var(--eco-text-secondary);
+  font-size: 1.125rem;
+  pointer-events: none;
+}
+
+:host ::ng-deep .eco-form-control,
+:host ::ng-deep .eco-password .p-password-input {
+  width: 100%;
+  min-height: 3rem;
+  color: var(--eco-text);
+  background: var(--eco-input);
+  border: 1px solid var(--eco-border);
+  border-radius: var(--eco-radius-sm);
+  box-shadow: none;
+}
+
+:host ::ng-deep .eco-form-control {
+  padding-left: 2.75rem !important;
+}
+
+:host ::ng-deep .eco-password {
+  display: block;
+  width: 100%;
+}
+
+:host ::ng-deep .eco-password .p-password-input {
+  padding-left: 2.75rem !important;
+  padding-right: 2.75rem !important;
+}
+
+:host ::ng-deep .eco-form-control::placeholder,
+:host ::ng-deep .eco-password .p-password-input::placeholder {
+  color: #6b7280;
+}
+
+:host ::ng-deep .eco-form-control:enabled:focus,
+:host ::ng-deep .eco-password .p-password-input:enabled:focus {
+  border-color: var(--eco-primary);
+  box-shadow: 0 0 0 0.2rem rgb(74 222 128 / 16%);
+}
+
+:host ::ng-deep .eco-password .p-password-toggle-mask-icon {
+  color: var(--eco-text-secondary);
+}
+
+/* Checkbox PrimeNG */
+:host ::ng-deep .p-checkbox {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+}
+
+:host ::ng-deep .p-checkbox-box {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* p-button externo */
+:host ::ng-deep .eco-login-button-wrapper {
+  display: block;
+  width: 100%;
+}
+
+/* p-button interno */
+:host ::ng-deep .eco-login-button-wrapper .eco-login-button.p-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  min-height: 3rem;
+  padding: 0.625rem 1rem;
+  color: var(--eco-on-primary);
+  background: var(--eco-primary);
+  border: 1px solid var(--eco-primary);
+  border-radius: var(--eco-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+:host ::ng-deep .eco-login-button-wrapper .eco-login-button.p-button:not(:disabled):hover {
+  color: var(--eco-on-primary);
+  background: var(--eco-primary-hover);
+  border-color: var(--eco-primary-hover);
+}
+
+:host ::ng-deep .eco-login-button-wrapper .eco-login-button.p-button:not(:disabled):active {
+  transform: scale(0.99);
+}
+
+:host ::ng-deep .eco-login-button-wrapper .eco-login-button.p-button:disabled {
+  width: 100% !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Respaldo: obliga ancho del button renderizado por PrimeNG */
+:host ::ng-deep .eco-login-button-wrapper button {
+  width: 100% !important;
+}
+
+/* Separador */
+.eco-divider {
+  height: 1px;
+  background: var(--eco-border);
+}
+
+/* Crear cuenta */
+.eco-create-account {
+  min-height: 3rem;
+  color: var(--eco-primary);
+  border: 1px solid rgb(74 222 128 / 35%);
+  border-radius: var(--eco-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.eco-create-account:hover {
+  color: #a7f3d0;
+  background: rgb(74 222 128 / 5%);
+  border-color: var(--eco-primary);
+}
+
+.eco-create-account .material-symbols-outlined {
+  font-size: 1.125rem;
+}
+
+/* Enlaces y divisores */
+.eco-border-top {
+  border-color: var(--eco-border) !important;
+}
+
+.eco-primary-link,
+.eco-footer-link {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.eco-primary-link:hover {
+  color: #a7f3d0;
+}
+
+.eco-footer-link {
+  color: var(--eco-text-muted);
+}
+
+.eco-footer-link:hover {
+  color: #d1d5db;
+}
+
+.eco-link-icon {
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+.eco-footer-copy {
+  color: var(--eco-text-muted);
+  font-size: 0.6875rem;
+}
+
+/* Animación del indicador de red */
+@keyframes eco-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(74 222 128 / 50%);
+  }
+
+  70% {
+    box-shadow: 0 0 0 0.45rem transparent;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 992px) {
+  .eco-brand-panel,
+  .eco-auth-panel {
+    width: 50%;
+    min-height: 100vh;
+  }
+
+  .eco-brand-panel {
+    border-right: 1px solid var(--eco-border);
+    border-bottom: 0;
+  }
+
+  .eco-auth-content {
+    max-width: 27.5rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .eco-brand-panel,
+  .eco-auth-panel {
+    min-height: auto;
+  }
+
+  .eco-brand-panel footer {
+    display: none !important;
+  }
+
+  .eco-auth-panel {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Móvil */
+@media (max-width: 575.98px) {
+  .eco-brand-panel,
+  .eco-auth-panel {
+    padding: 1.25rem !important;
+  }
+
+  .eco-status {
+    display: none !important;
+  }
+
+  .eco-auth-card {
+    padding: 1.25rem;
+  }
+
+  .eco-auth-content {
+    max-width: 100%;
+  }
+}
