@@ -1,1 +1,489 @@
-<p>crear-cuenta works!</p>
+<div class="registro-page min-vh-100 d-flex flex-column">
+
+  <!-- Header -->
+  <header class="registro-header sticky-top">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex align-items-center justify-content-between py-3">
+
+          <a
+            routerLink="/login"
+            class="d-inline-flex align-items-center gap-3 text-decoration-none text-white">
+
+          <span class="eco-logo d-inline-flex align-items-center justify-content-center">
+            <span class="material-symbols-outlined">eco</span>
+          </span>
+
+            <span>
+            <span class="d-flex align-items-center gap-2 fw-bold fs-5">
+              {{ appName }}
+
+              <span class="eco-country-badge">
+                {{ appCity }}
+              </span>
+            </span>
+
+            <span class="d-block small eco-text-secondary">
+              El Salvador Sostenible
+            </span>
+          </span>
+          </a>
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="network-status d-none d-sm-flex align-items-center gap-2">
+            <span class="status-dot"></span>
+            <span>Red activa en El Salvador</span>
+          </div>
+
+          <a
+            routerLink="/login"
+            class="login-link text-decoration-none"
+          >
+            Iniciar Sesión
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="registro-main flex-grow-1">
+    <div class="container py-5">
+
+      <div class="row align-items-center g-5">
+
+        <!-- Columna izquierda -->
+        <div class="col-12 col-lg-7">
+
+          <div class="hero-content">
+
+            <div class="hero-badge d-inline-flex align-items-center gap-2 mb-3">
+              <i class="pi pi-sparkles"></i>
+              <span>ÚNETE A LA RED SOSTENIBLE DE EL SALVADOR</span>
+            </div>
+
+            <h1 class="hero-title mb-3">
+              Empieza a reducir el
+              <span>desperdicio de alimentos</span>
+              hoy mismo.
+            </h1>
+
+            <p class="hero-description mb-4">
+              Conectamos a consumidores conscientes con mercados locales,
+              panaderías y restaurantes salvadoreños para salvar comida fresca,
+              ahorrar dinero y dinamizar la economía local.
+            </p>
+
+            <!-- Beneficios -->
+            <div class="row g-3 mb-4">
+
+              <div class="col-12 col-md-6">
+                <article class="benefit-card h-100">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="benefit-icon benefit-icon-primary">
+                      <i class="pi pi-shopping-bag"></i>
+                    </div>
+
+                    <span class="benefit-tag benefit-tag-primary">
+                      Hasta 70% OFF
+                    </span>
+                  </div>
+
+                  <h3>Para Consumidores</h3>
+
+                  <p class="mb-0">
+                    Acceso diario a paquetes sorpresa con alimentos de calidad
+                    a precio de liquidación y seguimiento de tu huella de
+                    carbono ahorrada.
+                  </p>
+                </article>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <article class="benefit-card h-100">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="benefit-icon benefit-icon-warning">
+                      <i class="pi pi-shop"></i>
+                    </div>
+
+                    <span class="benefit-tag benefit-tag-neutral">
+                      Verificado SV
+                    </span>
+                  </div>
+
+                  <h3>Para Comercios</h3>
+
+                  <p class="mb-0">
+                    Monetiza excedentes frescos, reduce pérdidas operativas y
+                    atrae nuevos clientes en San Salvador, Santa Ana y San Miguel.
+                  </p>
+                </article>
+              </div>
+
+            </div>
+
+            <!-- Métrica -->
+            <article class="impact-card d-flex align-items-center gap-3">
+              <div class="impact-icon">
+                <i class="pi pi-star-fill"></i>
+              </div>
+
+              <div>
+                <div class="d-flex flex-wrap align-items-center gap-2">
+                  <strong>+14,200 porciones de comida rescatadas</strong>
+                  <span class="impact-live">● En vivo</span>
+                </div>
+
+                <p class="mb-0 mt-1">
+                  Más de 6.8 toneladas de CO2 evitadas por nuestra comunidad
+                  activa en El Salvador.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-12 col-lg-5">
+
+          <section class="register-card mx-auto">
+
+            <div class="mb-4">
+              <h2 class="register-title mb-1">
+                Crea tu cuenta
+              </h2>
+
+              <p class="register-subtitle mb-0">
+                Únete a la revolución del ahorro y la sostenibilidad.
+              </p>
+            </div>
+
+            <form
+              [formGroup]="form"
+              (ngSubmit)="crearCuenta()"
+              novalidate
+            >
+
+              <!-- Rol -->
+              <div class="mb-4">
+                <label class="form-label-custom">
+                  SELECCIONA TU TIPO DE PERFIL
+                </label>
+
+                <div class="row g-2">
+
+                  <!-- Comprador -->
+                  <div class="col-6">
+                    <button
+                      type="button"
+                      class="role-card w-100 text-start"
+                      [class.role-card-active]="form.controls.rolId.value === 1"
+                      (click)="form.controls.rolId.setValue(1)"
+                    >
+                      <div
+                        class="role-icon"
+                        [class.role-icon-active]="form.controls.rolId.value === 1"
+                      >
+                        <i class="pi pi-shopping-bag"></i>
+                      </div>
+
+                      <span class="role-title">
+                        Comprador
+                      </span>
+
+                      <small>
+                        Ahorra y rescata
+                      </small>
+                    </button>
+                  </div>
+
+                  <!-- Comercio -->
+                  <div class="col-6">
+                    <button
+                      type="button"
+                      class="role-card w-100 text-start"
+                      [class.role-card-active]="form.controls.rolId.value === 2"
+                      (click)="form.controls.rolId.setValue(2)"
+                    >
+                      <div
+                        class="role-icon"
+                        [class.role-icon-active]="form.controls.rolId.value === 2"
+                      >
+                        <i class="pi pi-shop"></i>
+                      </div>
+
+                      <span class="role-title">
+                        Comercio
+                      </span>
+
+                      <small>
+                        Vende excedentes
+                      </small>
+                    </button>
+                  </div>
+
+                </div>
+
+                @if (campoInvalido('rolId')) {
+                  <small class="field-error">
+                    Debes seleccionar un tipo de perfil.
+                  </small>
+                }
+              </div>
+
+              <!-- Nombre -->
+              <div class="mb-3">
+                <label
+                  for="nombre"
+                  class="form-label-custom"
+                >
+                  Nombre completo
+                </label>
+
+                <div class="input-container">
+                  <i class="pi pi-user input-icon"></i>
+
+                  <input
+                    id="nombre"
+                    type="text"
+                    pInputText
+                    formControlName="nombre"
+                    class="form-control custom-input"
+                    placeholder="Ej. Juan Carlos Pérez"
+                  />
+                </div>
+
+                @if (campoInvalido('nombre')) {
+                  <small class="field-error">
+                    El nombre es requerido.
+                  </small>
+                }
+              </div>
+
+              <!-- Correo -->
+              <div class="mb-3">
+                <label
+                  for="email"
+                  class="form-label-custom"
+                >
+                  Correo electrónico
+                </label>
+
+                <div class="input-container">
+                  <i class="pi pi-envelope input-icon"></i>
+
+                  <input
+                    id="email"
+                    type="email"
+                    pInputText
+                    formControlName="email"
+                    class="form-control custom-input"
+                    placeholder="nombre@ejemplo.com"
+                  />
+                </div>
+
+                @if (campoInvalido('email')) {
+                  <small class="field-error">
+                    Ingresa un correo electrónico válido.
+                  </small>
+                }
+              </div>
+
+              <!-- Teléfono -->
+              <div class="mb-3">
+                <label
+                  for="telefono"
+                  class="form-label-custom"
+                >
+                  Teléfono
+                  <span class="optional-label">(opcional)</span>
+                </label>
+
+                <div class="input-container">
+                  <i class="pi pi-phone input-icon"></i>
+
+                  <input
+                    id="telefono"
+                    type="text"
+                    pInputText
+                    formControlName="telefono"
+                    class="form-control custom-input"
+                    placeholder="Ej. 7000-0000"
+                  />
+                </div>
+
+                @if (campoInvalido('telefono')) {
+                  <small class="field-error">
+                    Ingresa un teléfono válido.
+                  </small>
+                }
+              </div>
+
+              <!-- Municipio -->
+              <div class="mb-3">
+                <label
+                  for="municipioId"
+                  class="form-label-custom"
+                >
+                  Municipio
+                </label>
+
+                <p-select
+                  inputId="municipioId"
+                  formControlName="municipioId"
+                  [options]="municipios()"
+                  optionLabel="label"
+                  optionValue="value"
+                  dataKey="value"
+                  placeholder="Selecciona tu municipio"
+                  [loading]="cargandoMunicipios()"
+                  [filter]="true"
+                  filterBy="label"
+                  filterMatchMode="contains"
+                  filterPlaceholder="Buscar municipio..."
+                  emptyFilterMessage="No se encontraron municipios"
+                  emptyMessage="No hay municipios disponibles"
+                  styleClass="w-100 custom-select"
+                ></p-select>
+
+                @if (campoInvalido('municipioId')) {
+                  <small class="field-error">
+                    Debes seleccionar tu municipio.
+                  </small>
+                }
+              </div>
+
+              <!-- Contraseña -->
+              <div class="mb-3">
+                <label
+                  for="password"
+                  class="form-label-custom"
+                >
+                  Contraseña
+                </label>
+
+                <div class="input-container">
+                  <i class="pi pi-lock input-icon"></i>
+
+                  <input
+                    id="password"
+                    type="password"
+                    pInputText
+                    formControlName="password"
+                    class="form-control custom-input"
+                    placeholder="Mínimo 8 caracteres"
+                  />
+                </div>
+
+                @if (campoInvalido('password')) {
+                  <small class="field-error">
+                    La contraseña debe tener al menos 8 caracteres.
+                  </small>
+                }
+              </div>
+
+              <!-- Confirmar contraseña -->
+              <div class="mb-3">
+                <label
+                  for="confirmarPassword"
+                  class="form-label-custom"
+                >
+                  Confirmar contraseña
+                </label>
+
+                <div class="input-container">
+                  <i class="pi pi-lock input-icon"></i>
+
+                  <input
+                    id="confirmarPassword"
+                    type="password"
+                    pInputText
+                    formControlName="confirmarPassword"
+                    class="form-control custom-input"
+                    placeholder="Repite tu contraseña"
+                  />
+                </div>
+
+                @if (confirmarPasswordInvalida()) {
+                  <small class="field-error">
+                    Las contraseñas no coinciden.
+                  </small>
+                }
+              </div>
+
+              <!-- Términos -->
+              <div class="terms-container mb-4">
+                <p-checkbox
+                  inputId="aceptarTerminos"
+                  formControlName="aceptarTerminos"
+                  [binary]="true"></p-checkbox>
+
+                <label
+                  for="aceptarTerminos"
+                  class="terms-label"
+                >
+                  Acepto los
+                  <a href="#">Términos y Condiciones</a>
+                  y la
+                  <a href="#">Política de Privacidad</a>
+                  de EcoMercadito SV.
+                </label>
+              </div>
+
+              @if (campoInvalido('aceptarTerminos')) {
+                <small class="field-error terms-error">
+                  Debes aceptar los términos y condiciones.
+                </small>
+              }
+
+              <!-- Botón -->
+              <p-button
+                type="submit"
+                label="Crear Cuenta"
+                icon="pi pi-arrow-right"
+                iconPos="right"
+                styleClass="w-100 register-button"
+                [loading]="guardado()"
+                [disabled]="guardado()"></p-button>
+
+            </form>
+
+            <div class="login-footer mt-4 pt-3">
+              <span>
+                ¿Ya tienes una cuenta registrada?
+              </span>
+
+              <a
+                routerLink="/login"
+                class="text-decoration-none"
+              >
+                Inicia sesión
+              </a>
+            </div>
+
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="registro-footer">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 py-3">
+        <span>
+          © {{ahora}} {{appName}} {{appCity}}. Todos los derechos reservados.
+        </span>
+
+        <div class="d-flex gap-4">
+          <a href="#">Términos de Servicio</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Soporte El Salvador</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>

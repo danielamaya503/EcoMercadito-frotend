@@ -33,7 +33,7 @@ export class Login {
   private readonly router = inject(Router);
   appName = environment.appName;
   appCity = environment.city;
-  ahora = new Date().getFullYear();
+  ahora = environment.ahora;
 
   readonly cargando = signal(false);
 

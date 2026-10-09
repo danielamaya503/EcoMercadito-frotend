@@ -1,0 +1,592 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --eco-background: #131313;
+  --eco-surface-lowest: #0e0e0e;
+  --eco-surface-low: #1b1b1b;
+  --eco-surface: #1f1f1f;
+  --eco-surface-high: #2a2a2a;
+  --eco-surface-highest: #353535;
+  --eco-primary: #6bfb9a;
+  --eco-primary-container: #4ade80;
+  --eco-on-primary: #003919;
+  --eco-text: #e2e2e2;
+  --eco-text-muted: #c8c6c5;
+  --eco-text-variant: #bccabb;
+  --eco-outline: #3d4a3e;
+  --eco-warning: #f6bb1f;
+  --eco-error: #ffb4ab;
+}
+
+.registro-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--eco-text);
+  background: var(--eco-background);
+}
+
+/* =========================
+   Header
+========================= */
+
+.registro-header {
+  z-index: 10;
+  background: rgba(14, 14, 14, 0.94);
+  border-bottom: 1px solid rgba(61, 74, 62, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(61, 74, 62, 0.4);
+  border-radius: 12px;
+  background: var(--eco-surface-lowest);
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-name {
+  color: var(--eco-text);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.brand-name span {
+  color: var(--eco-primary);
+}
+
+.brand-caption {
+  color: var(--eco-text-muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.network-status {
+  padding: 7px 14px;
+  color: var(--eco-text-variant);
+  background: rgba(42, 42, 42, 0.7);
+  border: 1px solid rgba(61, 74, 62, 0.45);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--eco-primary);
+  box-shadow: 0 0 10px rgba(107, 251, 154, 0.7);
+}
+
+.login-link {
+  color: var(--eco-primary);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: var(--eco-primary-container);
+}
+
+/* =========================
+   Contenido principal
+========================= */
+
+.registro-main {
+  flex: 1;
+  color: var(--eco-text);
+  background: var(--eco-background);
+}
+
+.hero-content {
+  width: 100%;
+}
+
+.hero-badge {
+  padding: 7px 14px;
+  color: var(--eco-primary);
+  background: rgba(42, 42, 42, 0.9);
+  border: 1px solid rgba(61, 74, 62, 0.4);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hero-badge i {
+  font-size: 11px;
+}
+
+.hero-title {
+  max-width: 650px;
+  margin: 0;
+  color: var(--eco-text);
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.hero-title span {
+  color: var(--eco-primary-container);
+}
+
+.hero-description {
+  max-width: 650px;
+  margin: 0;
+  color: var(--eco-text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   Beneficios e impacto
+========================= */
+
+.benefit-card {
+  height: 100%;
+  padding: 20px;
+  background: var(--eco-surface-low);
+  border: 1px solid rgba(61, 74, 62, 0.28);
+  border-radius: 14px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.benefit-card:hover {
+  background: var(--eco-surface);
+  border-color: rgba(134, 148, 134, 0.55);
+}
+
+.benefit-icon,
+.impact-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+}
+
+.benefit-icon {
+  background: var(--eco-surface-highest);
+  font-size: 18px;
+}
+
+.benefit-icon-primary {
+  color: var(--eco-primary);
+}
+
+.benefit-icon-warning {
+  color: var(--eco-warning);
+}
+
+.benefit-card h3 {
+  margin: 0 0 6px;
+  color: var(--eco-text);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: var(--eco-text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.benefit-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.benefit-tag-primary {
+  color: var(--eco-primary);
+  background: rgba(74, 222, 128, 0.15);
+  border: 1px solid rgba(107, 251, 154, 0.3);
+}
+
+.benefit-tag-neutral {
+  color: var(--eco-text-muted);
+  background: var(--eco-surface-high);
+  border: 1px solid rgba(61, 74, 62, 0.35);
+}
+
+.impact-card {
+  padding: 16px;
+  background: var(--eco-surface-lowest);
+  border: 1px solid rgba(61, 74, 62, 0.35);
+  border-radius: 14px;
+}
+
+.impact-icon {
+  flex: 0 0 auto;
+  color: var(--eco-primary);
+  background: rgba(107, 251, 154, 0.1);
+  border: 1px solid rgba(107, 251, 154, 0.25);
+}
+
+.impact-card strong {
+  color: var(--eco-text);
+  font-size: 13px;
+}
+
+.impact-card p {
+  margin: 0;
+  color: var(--eco-text-muted);
+  font-size: 11px;
+}
+
+.impact-live {
+  color: var(--eco-primary);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================
+   Tarjeta de registro
+========================= */
+
+.register-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 32px;
+  background: var(--eco-surface-low);
+  border: 1px solid rgba(61, 74, 62, 0.35);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.register-title {
+  margin: 0;
+  color: var(--eco-text);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.register-subtitle {
+  margin: 0;
+  color: var(--eco-text-muted);
+  font-size: 13px;
+}
+
+/* =========================
+   Selector de rol
+========================= */
+
+.form-label-custom {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--eco-text-variant);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.optional-label {
+  color: var(--eco-text-muted);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.role-card {
+  width: 100%;
+  min-height: 96px;
+  padding: 12px;
+  color: var(--eco-text);
+  text-align: left;
+  background: var(--eco-surface-high);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.role-card:hover {
+  background: var(--eco-surface-highest);
+  border-color: rgba(134, 148, 134, 0.4);
+}
+
+.role-card:focus-visible {
+  outline: 2px solid var(--eco-primary);
+  outline-offset: 2px;
+}
+
+.role-card-active {
+  color: var(--eco-on-primary);
+  background: var(--eco-primary-container);
+  border-color: var(--eco-primary-container);
+}
+
+.role-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: var(--eco-text-muted);
+  background: var(--eco-surface-highest);
+  border-radius: 10px;
+}
+
+.role-icon-active {
+  color: var(--eco-on-primary);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.role-title {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.role-card small {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+/* =========================
+   Campos del formulario
+========================= */
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  background: var(--eco-surface-high);
+  border: 1px solid transparent;
+  border-radius: 11px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input-container:focus-within {
+  background: var(--eco-surface-highest);
+  border-color: var(--eco-primary);
+}
+
+.input-icon {
+  flex: 0 0 auto;
+  color: var(--eco-text-muted);
+  font-size: 14px;
+}
+
+.custom-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 0;
+  color: var(--eco-text) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-size: 13px;
+}
+
+.custom-input:focus {
+  outline: 0;
+}
+
+.custom-input::placeholder {
+  color: rgba(200, 198, 197, 0.55);
+}
+
+.custom-select {
+  width: 100%;
+  min-height: 44px;
+}
+
+.field-error {
+  display: block;
+  margin-top: 5px;
+  color: var(--eco-error);
+  font-size: 11px;
+}
+
+/* =========================
+   Términos
+========================= */
+
+.terms-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.terms-label {
+  color: var(--eco-text-muted);
+  font-size: 11px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.terms-label a,
+.login-footer a {
+  color: var(--eco-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.terms-label a:hover,
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+.terms-error {
+  margin-top: -18px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Botón PrimeNG
+========================= */
+
+/*
+  El p-button es el host del componente.
+  PrimeNG renderiza el botón real internamente,
+  por eso debemos atravesar el encapsulamiento de Angular.
+*/
+:host ::ng-deep p-button {
+  display: block;
+  width: 100%;
+}
+
+:host ::ng-deep .register-button {
+  width: 100% !important;
+  min-height: 46px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: var(--eco-on-primary) !important;
+  background: var(--eco-primary-container) !important;
+  border: 0 !important;
+  border-radius: 11px !important;
+  box-shadow: 0 10px 15px -3px rgba(77, 224, 130, 0.2);
+  font-size: 13px;
+  font-weight: 700 !important;
+  letter-spacing: 0.025em;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+:host ::ng-deep .register-button:hover:not(:disabled) {
+  background: var(--eco-primary) !important;
+  box-shadow: 0 15px 20px -3px rgba(77, 224, 130, 0.3);
+  transform: translateY(-1px);
+}
+
+:host ::ng-deep .register-button:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+:host ::ng-deep .register-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+:host ::ng-deep .register-button .p-button-label {
+  flex: 0 0 auto;
+}
+
+:host ::ng-deep .register-button .p-button-icon {
+  margin-left: 0.55rem;
+}
+
+/* =========================
+   Pie del formulario
+========================= */
+
+.login-footer {
+  color: var(--eco-text-muted);
+  border-top: 1px solid rgba(61, 74, 62, 0.25);
+  font-size: 11px;
+  text-align: center;
+}
+
+/* =========================
+   Footer general
+========================= */
+
+.registro-footer {
+  color: var(--eco-text-muted);
+  background: var(--eco-surface-lowest);
+  border-top: 1px solid rgba(61, 74, 62, 0.25);
+  font-size: 10px;
+}
+
+.registro-footer a {
+  color: var(--eco-text-muted);
+  text-decoration: none;
+}
+
+.registro-footer a:hover {
+  color: var(--eco-primary);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 991.98px) {
+  .hero-content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .register-card {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .registro-main .container {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .register-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .impact-card {
+    align-items: flex-start !important;
+  }
+
+  .registro-footer .d-flex {
+    text-align: center;
+  }
+
+  .registro-footer .d-flex.gap-4 {
+    gap: 12px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

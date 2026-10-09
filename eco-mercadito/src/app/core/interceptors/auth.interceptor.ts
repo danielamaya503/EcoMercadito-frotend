@@ -1,9 +1,14 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import {SesionService} from '../services/sesion.service';
+import {OMITIR_USUARIO_ID} from '../http/http-context.tokens';
 
 //intercepta todas las peticiones HTTP y les agrega automáticamente el usuarioId como parámetro de query (?usuarioId=1).
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  if (req.context.get(OMITIR_USUARIO_ID)) {
+    return next(req);
+  }
+
   const sesion = inject(SesionService);
   const usuarioId = sesion.usuarioId();
 

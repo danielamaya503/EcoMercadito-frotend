@@ -1,0 +1,143 @@
+<header class="app-navbar sticky-top">
+  <div class="container-xxl navbar-content">
+
+    <!-- Botón menú móvil -->
+    <p-button
+      icon="pi pi-bars"
+      [text]="true"
+      severity="secondary"
+      styleClass="mobile-menu-button"
+      ariaLabel="Abrir menú"
+      (onClick)="abrirMenu()"
+    ></p-button>
+
+    <!-- Marca -->
+    <a
+      class="brand-wrapper"
+      routerLink="/home"
+      (click)="cerrarMenu()"
+    >
+      <div class="brand-logo">
+        <span class="material-symbols-outlined">eco</span>
+      </div>
+
+      <div class="brand-copy">
+        <span class="brand-name">
+          {{appName}} <span>{{appCity}}</span>
+        </span>
+
+        <span class="brand-caption">
+          Consumo Circular Salvadoreño
+        </span>
+      </div>
+
+      @if (mostrarEstadoRed()) {
+        <p-tag
+          value="El Salvador"
+          severity="success"
+          [rounded]="true"
+          styleClass="country-tag"
+        ></p-tag>
+      }
+    </a>
+
+    <!-- Estado de red -->
+    @if (mostrarEstadoRed()) {
+      <div class="network-status d-none d-xl-flex">
+        <span class="status-dot"></span>
+        <span>Red activa en {{appCity}}</span>
+      </div>
+    }
+
+    <!-- Navegación escritorio -->
+    <nav class="desktop-navigation">
+      @for (enlace of enlaces(); track enlace.ruta) {
+        @if (enlaceVisible(enlace)) {
+          <a
+            [routerLink]="enlace.ruta"
+            routerLinkActive="nav-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+          >
+            {{ enlace.label }}
+          </a>
+        }
+      }
+    </nav>
+
+    <!-- Perfil -->
+    <div class="navbar-actions">
+      <p-button
+        icon="pi pi-bell"
+        [text]="true"
+        severity="secondary"
+        styleClass="notification-button d-none d-sm-inline-flex"
+        ariaLabel="Notificaciones"
+      ></p-button>
+
+      <p-avatar
+        icon="pi pi-user"
+        shape="circle"
+        styleClass="user-avatar"
+      ></p-avatar>
+
+      <div class="user-information d-none d-xl-flex">
+        <span class="user-name">
+          {{ sesion.usuario()?.nombre ?? 'Usuario' }}
+        </span>
+
+        <span class="user-role">
+          {{ sesion.nombreRol() || 'Sesión activa' }}
+        </span>
+      </div>
+
+      @if (mostrarLogout()) {
+        <p-button
+          icon="pi pi-sign-out"
+          [label]="mostrarTextoLogout() ? 'Cerrar sesión' : undefined"
+          severity="secondary"
+          [outlined]="true"
+          styleClass="logout-button"
+          (onClick)="cerrarSesion()"
+        ></p-button>
+      }
+    </div>
+  </div>
+</header>
+
+<!-- Menú responsive -->
+<p-drawer
+  [visible]="menuVisible()"
+  (visibleChange)="menuVisible.set($event)"
+  position="left"
+  header="EcoMercadito SV"
+  styleClass="navbar-drawer"
+>
+  <div class="mobile-navigation">
+    @for (enlace of enlaces(); track enlace.ruta) {
+      @if (enlaceVisible(enlace)) {
+        <a
+          [routerLink]="enlace.ruta"
+          routerLinkActive="mobile-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="mobile-nav-link"
+          (click)="cerrarMenu()"
+        >
+          <i [class]="enlace.icono"></i>
+          <span>{{ enlace.label }}</span>
+        </a>
+      }
+    }
+
+    @if (mostrarLogout()) {
+      <button
+        type="button"
+        class="mobile-logout"
+        (click)="cerrarSesion()"
+      >
+        <i class="pi pi-sign-out"></i>
+        <span>Cerrar sesión</span>
+      </button>
+    }
+  </div>
+</p-drawer>

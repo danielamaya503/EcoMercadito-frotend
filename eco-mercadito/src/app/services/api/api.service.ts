@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import {HttpClient, HttpContext, HttpParams} from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -10,7 +10,7 @@ export class ApiService {
   get(endpoint: string, params?: any) {
     return this.http.get<any>(`${this.baseUrl}/${endpoint}`, { params: new HttpParams({ fromObject: params ?? {} }) });
   }
-  post(endpoint: string, body: any) {
+  post(endpoint: string, body: any, option?: {context?: HttpContext}) {
     return this.http.post<any>(`${this.baseUrl}/${endpoint}`, body);
   }
   put(endpoint: string, body: any) {

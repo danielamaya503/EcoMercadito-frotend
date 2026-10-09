@@ -1,0 +1,297 @@
+:host {
+  display: block;
+
+  --eco-background: #131313;
+  --eco-surface-lowest: #0e0e0e;
+  --eco-surface-low: #1b1b1b;
+  --eco-surface: #1f1f1f;
+  --eco-surface-high: #2a2a2a;
+  --eco-surface-highest: #353535;
+  --eco-primary: #6bfb9a;
+  --eco-primary-container: #4ade80;
+  --eco-on-primary: #003919;
+  --eco-text: #e2e2e2;
+  --eco-text-muted: #c8c6c5;
+  --eco-text-variant: #bccabb;
+  --eco-outline: #3d4a3e;
+  --eco-error: #ffb4ab;
+}
+
+.app-navbar {
+  z-index: 1000;
+  color: var(--eco-text);
+  background: rgba(19, 19, 19, 0.97);
+  border-bottom: 1px solid rgba(61, 74, 62, 0.45);
+}
+
+.navbar-content {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--eco-on-primary);
+  font-size: 18px;
+  background: var(--eco-primary);
+  border-radius: 11px;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-name {
+  color: var(--eco-text);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.brand-name span {
+  color: var(--eco-primary);
+}
+
+.brand-caption {
+  color: var(--eco-text-muted);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.country-tag {
+  margin-left: 4px;
+  font-size: 10px;
+}
+
+.network-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  color: var(--eco-text-variant);
+  background: var(--eco-surface-low);
+  border: 1px solid rgba(61, 74, 62, 0.45);
+  border-radius: 999px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--eco-primary);
+  box-shadow: 0 0 10px rgba(107, 251, 154, 0.7);
+}
+
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-inline: auto;
+}
+
+.nav-link {
+  padding: 9px 12px;
+  color: var(--eco-text-variant);
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--eco-text);
+  background: var(--eco-surface);
+}
+
+.nav-link-active {
+  color: var(--eco-on-primary);
+  background: var(--eco-primary-container);
+  font-weight: 700;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.user-avatar {
+  color: var(--eco-on-primary);
+  background: var(--eco-primary);
+}
+
+.user-information {
+  flex-direction: column;
+  gap: 2px;
+  min-width: 92px;
+}
+
+.user-name {
+  overflow: hidden;
+  color: var(--eco-text);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-role {
+  color: var(--eco-primary);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.mobile-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav-link,
+.mobile-logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  color: var(--eco-text-variant);
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: left;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-link-active {
+  color: var(--eco-on-primary);
+  background: var(--eco-primary-container);
+}
+
+.mobile-logout {
+  margin-top: 16px;
+  color: var(--eco-error);
+  border-top: 1px solid rgba(61, 74, 62, 0.4);
+  border-radius: 0;
+}
+
+/* Ajustes PrimeNG */
+:host ::ng-deep .notification-button.p-button,
+:host ::ng-deep .mobile-menu-button.p-button {
+  color: var(--eco-text-variant);
+}
+
+:host ::ng-deep .notification-button.p-button:hover,
+:host ::ng-deep .mobile-menu-button.p-button:hover {
+  color: var(--eco-text);
+  background: var(--eco-surface);
+}
+
+:host ::ng-deep .logout-button.p-button {
+  color: var(--eco-text-variant);
+  background: transparent;
+  border-color: var(--eco-surface-high);
+  font-size: 11px;
+}
+
+:host ::ng-deep .logout-button.p-button:hover {
+  color: var(--eco-error);
+  border-color: rgba(255, 180, 171, 0.5);
+  background: rgba(147, 0, 10, 0.12);
+}
+
+:host ::ng-deep .navbar-drawer.p-drawer {
+  color: var(--eco-text);
+  background: var(--eco-surface-lowest);
+}
+
+:host ::ng-deep .navbar-drawer .p-drawer-header {
+  color: var(--eco-text);
+  border-bottom: 1px solid rgba(61, 74, 62, 0.4);
+}
+
+@media (max-width: 1199.98px) {
+  .network-status {
+    display: none;
+  }
+
+  .desktop-navigation {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mobile-menu-button {
+    display: inline-flex;
+  }
+
+  .desktop-navigation {
+    display: none;
+  }
+
+  .brand-wrapper {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar-content {
+    min-height: 68px;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .brand-caption {
+    display: none;
+  }
+
+  :host ::ng-deep .logout-button .p-button-label {
+    display: none;
+  }
+
+  :host ::ng-deep .logout-button.p-button {
+    width: 36px;
+    padding-inline: 0;
+  }
+}

@@ -1,123 +1,285 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#c8c6c5", "on-primary-fixed": "#00210c", "secondary-fixed": "#e5e2e1", "on-surface": "#e2e2e2", "outline": "#869486", "inverse-primary": "#006d36", "surface-container-low": "#1b1b1b", "surface-container-high": "#2a2a2a", "on-error-container": "#ffdad6", "on-surface-variant": "#bccabb", "surface-tint": "#4de082", "on-secondary-fixed": "#1b1b1c", "surface-container": "#1f1f1f", "primary-container": "#4ade80", "secondary-fixed-dim": "#c8c6c5", "on-tertiary-fixed-variant": "#5c4300", "on-error": "#690005", "surface-dim": "#131313", "surface-variant": "#353535", "surface-container-lowest": "#0e0e0e", "surface-bright": "#393939", "tertiary-fixed-dim": "#f9bd22", "primary": "#6bfb9a", "inverse-on-surface": "#303030", "surface": "#131313", "background": "#131313", "tertiary-container": "#f6bb1f", "error": "#ffb4ab", "on-background": "#e2e2e2", "on-tertiary-container": "#684c00", "on-primary": "#003919", "tertiary-fixed": "#ffdf9f", "error-container": "#93000a", "on-tertiary-fixed": "#261a00", "tertiary": "#ffdc96", "secondary-container": "#474746", "primary-fixed-dim": "#4de082", "on-secondary": "#303030", "outline-variant": "#3d4a3e", "surface-container-highest": "#353535", "primary-fixed": "#6dfe9c", "on-tertiary": "#402d00", "on-secondary-fixed-variant": "#474746", "inverse-surface": "#e2e2e2", "on-primary-container": "#005e2d", "on-secondary-container": "#b7b5b4", "on-primary-fixed-variant": "#005227" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "stack-sm": "8px", "margin-desktop": "24px", "margin-mobile": "16px", "unit": "4px", "stack-md": "16px", "stack-lg": "24px", "gutter": "12px" } } } }</script><style>@layer base { body { -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom); } .pt-safe { padding-top: env(safe-area-inset-top); } } .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }</style></head><body class="bg-background text-on-surface select-none"><header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl pt-safe"><div class="h-14 flex items-center justify-between px-margin-mobile"><h1 class="font-headline-md text-headline-md text-primary">Descubrir</h1><div class="flex items-center gap-stack-md"><button class="w-11 h-11 flex items-center justify-center"><span class="material-symbols-outlined text-on-surface">search</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="pt-14 pb-24 min-h-screen bg-background"><div class="flex flex-col w-full px-margin-mobile gap-stack-lg pb-10 pt-4">
-  <div class="flex flex-col gap-stack-sm">
-    <h2 class="font-headline-sm text-headline-sm text-on-surface">Ofertas Cercanas</h2>
-    <div class="flex gap-stack-md overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2">
-      <button class="snap-start shrink-0 flex flex-col items-center gap-unit bg-surface-container rounded-lg p-3 min-w-[72px] active:scale-95 transition-transform duration-200">
-        <span class="material-symbols-outlined text-primary text-[28px] drop-shadow-[0_0_8px_rgba(107,251,154,0.3)]">nutrition</span>
-        <span class="font-label-xs text-label-xs text-on-surface-variant">Frutas</span>
-      </button>
-      <button class="snap-start shrink-0 flex flex-col items-center gap-unit bg-surface-container rounded-lg p-3 min-w-[72px] active:scale-95 transition-transform duration-200">
-        <span class="material-symbols-outlined text-on-surface-variant text-[28px]">bakery_dining</span>
-        <span class="font-label-xs text-label-xs text-on-surface-variant">Pan</span>
-      </button>
-      <button class="snap-start shrink-0 flex flex-col items-center gap-unit bg-surface-container rounded-lg p-3 min-w-[72px] active:scale-95 transition-transform duration-200">
-        <span class="material-symbols-outlined text-on-surface-variant text-[28px]">restaurant</span>
-        <span class="font-label-xs text-label-xs text-on-surface-variant">Comida</span>
-      </button>
-      <button class="snap-start shrink-0 flex flex-col items-center gap-unit bg-surface-container rounded-lg p-3 min-w-[72px] active:scale-95 transition-transform duration-200">
-        <span class="material-symbols-outlined text-on-surface-variant text-[28px]">local_drink</span>
-        <span class="font-label-xs text-label-xs text-on-surface-variant">Lácteos</span>
-      </button>
-      <button class="snap-start shrink-0 flex flex-col items-center gap-unit bg-surface-container rounded-lg p-3 min-w-[72px] active:scale-95 transition-transform duration-200">
-        <span class="material-symbols-outlined text-on-surface-variant text-[28px]">storefront</span>
-        <span class="font-label-xs text-label-xs text-on-surface-variant">Abarrotes</span>
-      </button>
-    </div>
-  </div>
-  <div class="flex flex-col gap-gutter">
-    <div class="bg-surface-container rounded-xl p-4 flex gap-4 items-center relative overflow-hidden group hover:bg-surface-container-high transition-colors duration-300">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div class="w-16 h-16 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 relative">
-        <span class="material-symbols-outlined text-on-surface text-[32px]">nutrition</span>
-        <div class="absolute -top-2 -right-2 bg-tertiary-container text-on-tertiary-container font-label-xs text-[9px] px-1.5 py-0.5 rounded-full shadow-sm">
-          -60%
-        </div>
-      </div>
-      <div class="flex flex-col flex-1 min-w-0 py-1">
-        <div class="flex justify-between items-start gap-2 mb-1">
-          <h3 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Cesta de Tomates</h3>
-          <span class="font-label-xs text-[10px] text-tertiary flex items-center gap-0.5 whitespace-nowrap bg-tertiary/10 px-1.5 py-0.5 rounded-sm">
-<span class="material-symbols-outlined text-[12px]">schedule</span> 2h
-          </span>
-        </div>
-        <p class="font-body-md text-[13px] text-on-surface-variant truncate mb-2">Mercadito Central</p>
-        <div class="flex justify-between items-end mt-auto">
-          <div class="flex items-baseline gap-2">
-            <span class="font-headline-sm text-[18px] text-primary">$0.75</span>
-            <span class="font-body-md text-[13px] text-on-surface-variant line-through decoration-on-surface-variant/50">$2.00</span>
+<div class="home-page">
+
+  <!-- Header -->
+  <app-navbar></app-navbar>
+
+  <main>
+
+    <!-- Hero + filtros -->
+    <section class="hero-section">
+      <div class="container-xxl py-4 py-md-5 d-flex flex-column gap-4">
+
+        <div class="row g-4 align-items-end">
+          <div class="col-12 col-lg-8">
+            <span class="hero-eyebrow">
+              <i class="pi pi-circle-fill"></i> El Salvador · Red de rescate alimentario en tiempo real
+            </span>
+            <h1 class="hero-title mt-2">
+              Descubre y rescata comida deliciosa <span>hoy</span>
+            </h1>
+            <p class="hero-description mb-0">
+              Alimentos frescos con hasta 70% de descuento en San Salvador, Santa Ana y San Miguel. Combate el desperdicio local a precio solidario.
+            </p>
           </div>
-          <span class="font-label-xs text-[10px] text-primary-fixed-dim flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full">
-<span class="material-symbols-outlined text-[12px]">eco</span>
-            -0.5kg CO₂
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="bg-surface-container rounded-xl p-4 flex gap-4 items-center relative overflow-hidden group hover:bg-surface-container-high transition-colors duration-300">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div class="w-16 h-16 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 relative">
-        <span class="material-symbols-outlined text-on-surface text-[32px]">bakery_dining</span>
-        <div class="absolute -top-2 -right-2 bg-tertiary-container text-on-tertiary-container font-label-xs text-[9px] px-1.5 py-0.5 rounded-full shadow-sm">
-          -50%
-        </div>
-      </div>
-      <div class="flex flex-col flex-1 min-w-0 py-1">
-        <div class="flex justify-between items-start gap-2 mb-1">
-          <h3 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Surtido de Panes Dulces</h3>
-          <span class="font-label-xs text-[10px] text-tertiary flex items-center gap-0.5 whitespace-nowrap bg-tertiary/10 px-1.5 py-0.5 rounded-sm">
-<span class="material-symbols-outlined text-[12px]">schedule</span> 45m
-          </span>
-        </div>
-        <p class="font-body-md text-[13px] text-on-surface-variant truncate mb-2">Panadería La Espiga</p>
-        <div class="flex justify-between items-end mt-auto">
-          <div class="flex items-baseline gap-2">
-            <span class="font-headline-sm text-[18px] text-primary">$2.50</span>
-            <span class="font-body-md text-[13px] text-on-surface-variant line-through decoration-on-surface-variant/50">$5.00</span>
+
+          <div class="col-12 col-lg-4">
+            <div class="stats-card d-flex align-items-center justify-content-around gap-3">
+              <div>
+                <small>Lotes disponibles hoy</small>
+                <strong class="text-primary-eco">{{ totalPaquetes() }} paquetes</strong>
+              </div>
+              <div class="stats-divider"></div>
+              <div>
+                <small>Zona preferente</small>
+                <strong><i class="pi pi-map-marker text-primary-eco"></i> SS Centro</strong>
+              </div>
+            </div>
           </div>
-          <span class="font-label-xs text-[10px] text-primary-fixed-dim flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full">
-<span class="material-symbols-outlined text-[12px]">eco</span>
-            -1.2kg CO₂
-          </span>
         </div>
-      </div>
-    </div>
-    <div class="bg-surface-container rounded-xl p-4 flex gap-4 items-center relative overflow-hidden group hover:bg-surface-container-high transition-colors duration-300">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div class="w-16 h-16 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 relative">
-        <span class="material-symbols-outlined text-on-surface text-[32px]">restaurant</span>
-        <div class="absolute -top-2 -right-2 bg-tertiary-container text-on-tertiary-container font-label-xs text-[9px] px-1.5 py-0.5 rounded-full shadow-sm">
-          -40%
-        </div>
-      </div>
-      <div class="flex flex-col flex-1 min-w-0 py-1">
-        <div class="flex justify-between items-start gap-2 mb-1">
-          <h3 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Menú del Día Salchichas</h3>
-          <span class="font-label-xs text-[10px] text-tertiary flex items-center gap-0.5 whitespace-nowrap bg-tertiary/10 px-1.5 py-0.5 rounded-sm">
-<span class="material-symbols-outlined text-[12px]">schedule</span> 1h
-          </span>
-        </div>
-        <p class="font-body-md text-[13px] text-on-surface-variant truncate mb-2">Restaurante El Rincón</p>
-        <div class="flex justify-between items-end mt-auto">
-          <div class="flex items-baseline gap-2">
-            <span class="font-headline-sm text-[18px] text-primary">$4.50</span>
-            <span class="font-body-md text-[13px] text-on-surface-variant line-through decoration-on-surface-variant/50">$7.50</span>
+
+        <div class="filter-panel">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <p-iconfield class="w-100">
+                <p-inputicon class="pi pi-search"></p-inputicon>
+                <input
+                  type="text"
+                  pInputText
+                  class="w-100"
+                  placeholder="Buscar por panadería, restaurante, supermercado o producto..."
+                  [ngModel]="textoBusqueda()"
+                  (ngModelChange)="textoBusqueda.set($event)"
+                />
+              </p-iconfield>
+            </div>
+
+            <div class="col-12 col-sm-8 col-md-4">
+              <p-select
+                [options]="municipios"
+                optionLabel="label"
+                optionValue="value"
+                placeholder="Todos los municipios salvadoreños"
+                [filter]="true"
+                filterBy="label"
+                filterPlaceholder="Buscar municipio..."
+                styleClass="w-100"
+                [ngModel]="municipioSeleccionado()"
+                (ngModelChange)="municipioSeleccionado.set($event)"
+              ></p-select>
+            </div>
+
+            <div class="col-12 col-sm-4 col-md-2">
+              <p-button
+                label="Limpiar"
+                icon="pi pi-filter-slash"
+                styleClass="w-100"
+                (onClick)="limpiarFiltros()"
+              ></p-button>
+            </div>
           </div>
-          <span class="font-label-xs text-[10px] text-primary-fixed-dim flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full">
-<span class="material-symbols-outlined text-[12px]">eco</span>
-            -2.1kg CO₂
-          </span>
+
+          <div class="filter-footer d-flex flex-wrap align-items-center justify-content-between gap-3">
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <span class="filter-label">Afinar por:</span>
+              @for (filtro of filtros; track filtro.clave) {
+                <p-button
+                  [label]="filtro.label"
+                  [icon]="filtro.icono"
+                  size="small"
+                  [rounded]="true"
+                  [severity]="filtroActivo(filtro.clave) ? 'primary' : 'secondary'"
+                  (onClick)="alternarFiltro(filtro.clave)"
+                ></p-button>
+              }
+            </div>
+            <small class="text-muted-eco">
+              Mostrando <strong class="text-primary-eco">{{ ofertasFiltradas().length }}</strong> ofertas activas
+            </small>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="category-section">
+      <div class="container-xxl py-3">
+        <div class="category-scroll d-flex gap-2 overflow-auto pb-1">
+          @for (categoria of categorias; track categoria.clave) {
+            <p-button
+              [label]="categoria.label"
+              [icon]="categoria.icono"
+              [badge]="'' + (conteoCategorias()[categoria.clave] ?? 0)"
+              [severity]="categoriaActiva() === categoria.clave ? 'primary' : 'secondary'"
+              styleClass="flex-shrink-0 text-nowrap"
+              (onClick)="categoriaActiva.set(categoria.clave)"
+            ></p-button>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Ofertas -->
+    <section class="container-xxl py-4 py-md-5">
+      @if (ofertasFiltradas().length) {
+        <div class="row g-4">
+          @for (oferta of ofertasFiltradas(); track oferta.id) {
+            <div class="col-12 col-md-6 col-xl-4">
+              <p-card styleClass="offer-card h-100">
+                <ng-template #header>
+                  <div class="offer-media" [class]="'offer-media tono-' + oferta.tono">
+                    <div class="offer-icon"><i [class]="oferta.icono"></i></div>
+
+                    <div class="offer-tags">
+                      <p-tag [value]="'-' + oferta.descuento + '% OFF'" severity="warn"></p-tag>
+                      @for (etiqueta of oferta.etiquetas; track etiqueta.texto) {
+                        <p-tag [value]="etiqueta.texto" [severity]="etiqueta.severidad"></p-tag>
+                      }
+                    </div>
+
+                    <span class="offer-time" [class.urgent]="oferta.urgente">
+                      <i class="pi pi-stopwatch"></i> {{ oferta.tiempo }}
+                    </span>
+                  </div>
+                </ng-template>
+
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex justify-content-between gap-2 offer-meta">
+                    <span class="text-primary-eco fw-semibold"><i class="pi pi-shop"></i> {{ oferta.comercio }}</span>
+                    <span class="text-muted-eco text-end">{{ oferta.municipio }}</span>
+                  </div>
+
+                  <div>
+                    <h2 class="offer-title">{{ oferta.titulo }}</h2>
+                    <p class="offer-description mb-0">{{ oferta.descripcion }}</p>
+                  </div>
+
+                  <div class="offer-footer d-flex flex-column gap-3">
+                    <div class="d-flex align-items-baseline justify-content-between gap-2">
+                      <div class="d-flex align-items-baseline gap-2">
+                        <span class="offer-price">{{ oferta.precio | currency: 'USD' }}</span>
+                        <span class="offer-old-price">{{ oferta.precioOriginal | currency: 'USD' }}</span>
+                      </div>
+                      <p-tag
+                        [value]="oferta.disponibles + (oferta.disponibles === 1 ? ' disponible' : ' disponibles')"
+                        [severity]="oferta.disponibles === 1 ? 'danger' : 'secondary'"
+                      ></p-tag>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between gap-2">
+                      <small class="text-primary-eco"><i class="pi pi-leaf"></i> -{{ oferta.co2 }} kg CO₂ prevenidos</small>
+                      <p-button
+                        label="Rescatar"
+                        icon="pi pi-arrow-right"
+                        iconPos="right"
+                        size="small"
+                        (onClick)="rescatar(oferta)"
+                      ></p-button>
+                    </div>
+                  </div>
+                </div>
+              </p-card>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="empty-state text-center py-5">
+          <i class="pi pi-search"></i>
+          <h3>No encontramos ofertas</h3>
+          <p class="text-muted-eco">Prueba con otra categoría, municipio o palabra clave.</p>
+          <p-button label="Limpiar filtros" icon="pi pi-filter-slash" (onClick)="limpiarFiltros()"></p-button>
+        </div>
+      }
+    </section>
+
+    <!-- Impacto -->
+    <section class="impact-section">
+      <div class="container-xxl py-4 py-md-5 d-flex flex-column gap-4">
+
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+          <h2 class="impact-title mb-0"><i class="pi pi-globe text-primary-eco"></i> Impacto colectivo hoy en El Salvador</h2>
+          <p-tag [value]="impacto.actualizado" severity="success" [rounded]="true" icon="pi pi-circle-fill"></p-tag>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-lg-4">
+            <div class="metric-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted-eco">Alimentos Rescatados</span>
+                <span class="metric-icon text-primary-eco"><i class="pi pi-box"></i></span>
+              </div>
+              <strong class="metric-value text-primary-eco">{{ impacto.alimentosKg.toLocaleString('es-SV') }} kg</strong>
+              <small class="text-muted-eco">Comida apta consumida en lugar de desperdiciada en vertederos salvadoreños.</small>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="metric-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted-eco">Emisiones Evitadas</span>
+                <span class="metric-icon text-warning-eco"><i class="pi pi-cloud"></i></span>
+              </div>
+              <strong class="metric-value">{{ impacto.emisionesTon }} <span class="text-warning-eco">t CO₂</span></strong>
+              <div>
+                <p-progressbar [value]="progresoMeta" [showValue]="false" styleClass="impact-progress"></p-progressbar>
+                <div class="d-flex justify-content-between mt-2">
+                  <small class="text-muted-eco">Meta diaria: {{ impacto.metaTon }} t</small>
+                  <small class="text-primary-eco fw-bold">{{ progresoMeta }}% alcanzado</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="metric-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted-eco">Economía Familiar</span>
+                <span class="metric-icon text-primary-eco"><i class="pi pi-wallet"></i></span>
+              </div>
+              <strong class="metric-value text-primary-eco">{{ impacto.ahorroFamiliar | currency: 'USD':'symbol':'1.0-0' }}</strong>
+              <small class="text-primary-eco">
+                <i class="pi pi-verified"></i> Promedio de {{ impacto.ahorroPromedio | currency: 'USD' }} ahorrados por compra
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <aside class="merchant-cta d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4">
+          <div class="d-flex align-items-start align-items-md-center gap-3">
+            <span class="cta-icon"><i class="pi pi-shop"></i></span>
+            <div>
+              <h3 class="cta-title">¿Tienes un comercio de comida en El Salvador?</h3>
+              <p class="text-muted-eco mb-0">
+                Publica tus excedentes al final del turno, recupera costos operativos y únete a los más de 120 negocios sostenibles en la red.
+              </p>
+            </div>
+          </div>
+          <p-button label="Registrar mi negocio" icon="pi pi-arrow-right" iconPos="right"></p-button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="home-footer">
+    <div class="container-xxl py-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-3 pb-3 footer-divider">
+        <div>
+          <div class="brand-name mb-1">{{appName}} <span>SV</span></div>
+          <p class="text-muted-eco mb-0 footer-text">
+            Plataforma salvadoreña para el rescate y comercialización de excedentes alimentarios en óptimas condiciones.
+          </p>
+        </div>
+        <div class="d-flex flex-wrap gap-3 align-items-start footer-links">
+          <a>Términos y Condiciones</a>
+          <a>Política de Privacidad</a>
+          <a>Soporte El Salvador</a>
+          <a>Comercios Aliados</a>
+        </div>
+      </div>
+      <div class="pt-3 d-flex flex-column flex-sm-row justify-content-between gap-2 text-muted-eco footer-copy">
+        <span>© {{ahora}} {{appName}} {{appCity}}. Todos los derechos reservados.</span>
+        <span><i class="pi pi-leaf text-primary-eco"></i> San Salvador · Santa Ana · San Miguel</span>
+      </div>
     </div>
-  </div>
+  </footer>
 </div>
-  <style>
-    .hide-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .hide-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style></main><nav class="fixed bottom-0 w-full z-50 bg-background/90 backdrop-blur-xl pb-safe shadow-[0_-1px_12px_rgba(0,0,0,0.5)]" data-active-classes="text-primary"><div class="flex justify-around items-center h-16"><a aria-current="page" class="flex flex-col items-center justify-center w-full h-full transition-colors text-primary" data-path="descubrir" href="#"><span class="material-symbols-outlined text-[24px]">eco</span><span class="font-label-xs text-label-xs mt-1">Descubrir</span></a><a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant transition-colors" data-path="mis-ofertas" href="#"><span class="material-symbols-outlined text-[24px]">shopping_cart</span><span class="font-label-xs text-label-xs mt-1">Mis Ofertas</span></a><a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant transition-colors" data-path="perfil" href="#"><span class="material-symbols-outlined text-[24px]">person</span><span class="font-label-xs text-label-xs mt-1">Perfil</span></a></div></nav></body></html>

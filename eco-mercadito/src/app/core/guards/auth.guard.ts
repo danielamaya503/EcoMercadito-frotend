@@ -24,6 +24,14 @@ export const rolGuard = (...roles: string[]): CanActivateFn => () => {
     : router.createUrlTree(['/home']);
 };
 
+export const guestGuard: CanActivateFn = () => {
+  const sesion = inject(SesionService);
+  const router = inject(Router);
+
+  return sesion.autenticado()
+    ? router.createUrlTree(['/home'])
+    : true;
+};
 
 //Cómo los usas:
 //{
